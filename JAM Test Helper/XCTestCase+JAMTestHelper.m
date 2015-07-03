@@ -8,6 +8,8 @@
 
 #import "XCTestCase+JAMTestHelper.h"
 
+typedef BOOL (^WaitForExpression)();
+
 NSString * const JAMTimeoutException = @"JAMTestHelper Timeout Failure";
 
 const CGFloat kTimeout = 2.0f;
@@ -15,59 +17,69 @@ const CGFloat kTimeout = 2.0f;
 @implementation XCTestCase (JAMTestHelper)
 
 - (void)waitForElementToExist:(XCUIElement *)element {
-    [self waitForElement:element toExist:YES];
+    NSException *exception = [self timeoutExceptionForElement:element shouldExist:YES];
+    [self waitFor:^BOOL{
+        return element.exists;
+    } withException:exception];
 }
 
 - (void)waitForElementToNotExist:(XCUIElement *)element {
-    [self waitForElement:element toExist:NO];
+    NSException *exception = [self timeoutExceptionForElement:element shouldExist:NO];
+    [self waitFor:^BOOL{
+        return !element.exists;
+    } withException:exception];
 }
 
 - (void)waitForActivityIndicatorToFinish {
-    NSTimeInterval startTime = [NSDate timeIntervalSinceReferenceDate];
-
     XCUIApplication *app = [[XCUIApplication alloc] init];
     XCUIElementQuery *spinnerQuery = app.activityIndicators;
-    while ([spinnerQuery.element.value integerValue] == 1) {
-        if ([NSDate timeIntervalSinceReferenceDate] - startTime > kTimeout) {
-            [self raiseTimeoutExceptionForActivityIndicator];
-        }
-        CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0.1, false);
-    }
+    NSException *exception = [self timeoutExceptionForActivityIndicator];
+
+    [self waitFor:^BOOL {
+        return [spinnerQuery.element.value integerValue] != 1;
+    } withException:exception];
 }
 
 #pragma mark - Private
 
 - (void)waitForElement:(XCUIElement *)element toExist:(BOOL)shouldExist {
-    NSTimeInterval startTime = [NSDate timeIntervalSinceReferenceDate];
-    while (element.exists != shouldExist) {
-        if ([NSDate timeIntervalSinceReferenceDate] - startTime > kTimeout) {
-            [self raiseTimeoutExceptionForElement:element existing:!shouldExist];
-        }
+    NSException *exception = [self timeoutExceptionForElement:element shouldExist:shouldExist];
+    [self waitFor:^BOOL{
+        return element.exists == shouldExist;
+    } withException:exception];
+}
 
+- (void)waitFor:(WaitForExpression)expression withException:(NSException *)exception {
+    NSTimeInterval startTime = [NSDate timeIntervalSinceReferenceDate];
+
+    while (!expression()) {
+        if ([NSDate timeIntervalSinceReferenceDate] - startTime > kTimeout) {
+            [exception raise];
+        }
         CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0.1, false);
     }
 }
 
-- (void)raiseTimeoutExceptionForElementExisting:(XCUIElement *)element {
-    [self raiseTimeoutExceptionForElement:element existing:YES];
+- (NSException *)timeoutExceptionForElementExisting:(XCUIElement *)element {
+    return [self timeoutExceptionForElement:element shouldExist:YES];
 }
 
-- (void)raiseTimeoutExceptionForElementNotExisting:(XCUIElement *)element {
-    [self raiseTimeoutExceptionForElement:element existing:NO];
+- (NSException *)timeoutExceptionForElementNotExisting:(XCUIElement *)element {
+    return [self timeoutExceptionForElement:element shouldExist:NO];
 }
 
-- (void)raiseTimeoutExceptionForActivityIndicator {
-    [self raiseTimeoutExceptionWithReason:@"TImed out waiting for activity indicator to finish."];
+- (NSException *)timeoutExceptionForActivityIndicator {
+    return [self timeoutExceptionWithReason:@"TImed out waiting for activity indicator to finish."];
 }
 
-- (void)raiseTimeoutExceptionForElement:(XCUIElement *)element existing:(BOOL)existing {
+- (NSException *)timeoutExceptionForElement:(XCUIElement *)element shouldExist:(BOOL)shouldExist {
     NSString *reason = [NSString stringWithFormat:@"Timed out waiting for element (%@) to%@ exist.",
-                        element, existing ? @" not" : @""];
-    [self raiseTimeoutExceptionWithReason:reason];
+                        element, shouldExist ? @"" : @" not"];
+    return [self timeoutExceptionWithReason:reason];
 }
 
-- (void)raiseTimeoutExceptionWithReason:(NSString *)reason {
-    [[NSException exceptionWithName:JAMTimeoutException reason:reason userInfo:nil] raise];
+- (NSException *)timeoutExceptionWithReason:(NSString *)reason {
+    return [NSException exceptionWithName:JAMTimeoutException reason:reason userInfo:nil];
 }
 
 @end
