@@ -15,37 +15,37 @@ const CGFloat kTimeout = 2.0f;
 @implementation XCTestCase (JAMTestHelpers)
 
 - (void)waitForElementToExist:(XCUIElement *)element {
-    NSTimeInterval startTime = [NSDate timeIntervalSinceReferenceDate];
-    while (!element.exists) {
-        if ([NSDate timeIntervalSinceReferenceDate] - startTime > kTimeout) {
-            [self raiseTimeoutExceptionForElementNotExisting:element];
-        }
-
-        CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0.1, false);
-    }
+    [self waitForElement:element toExist:YES];
 }
 
 - (void)waitForElementToNotExist:(XCUIElement *)element {
-    NSTimeInterval startTime = [NSDate timeIntervalSinceReferenceDate];
-    while (element.exists) {
-        if ([NSDate timeIntervalSinceReferenceDate] - startTime > kTimeout) {
-            [self raiseTimeoutExceptionForElementNotExisting:element];
-        }
-
-        CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0.1, false);
-    }
+    [self waitForElement:element toExist:NO];
 }
 
 #pragma mark - Private
 
+- (void)waitForElement:(XCUIElement *)element toExist:(BOOL)shouldExist {
+    NSTimeInterval startTime = [NSDate timeIntervalSinceReferenceDate];
+    while (element.exists != shouldExist) {
+        if ([NSDate timeIntervalSinceReferenceDate] - startTime > kTimeout) {
+            [self raiseTimeoutExceptionForElement:element existing:!shouldExist];
+        }
+
+        CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0.1, false);
+    }
+}
+
 - (void)raiseTimeoutExceptionForElementExisting:(XCUIElement *)element {
-    NSString *reason = [NSString stringWithFormat:@"Timed out waiting for element (%@) to not exist.", element];
-    NSException *exception = [NSException exceptionWithName:JAMTimeoutException reason:reason userInfo:nil];
-    [exception raise];
+    [self raiseTimeoutExceptionForElement:element existing:YES];
 }
 
 - (void)raiseTimeoutExceptionForElementNotExisting:(XCUIElement *)element {
-    NSString *reason = [NSString stringWithFormat:@"Timed out waiting for element (%@) to exist.", element];
+    [self raiseTimeoutExceptionForElement:element existing:NO];
+}
+
+- (void)raiseTimeoutExceptionForElement:(XCUIElement *)element existing:(BOOL)existing {
+    NSString *reason = [NSString stringWithFormat:@"Timed out waiting for element (%@) to%@ exist.",
+                        element, existing ? @" not" : @""];
     NSException *exception = [NSException exceptionWithName:JAMTimeoutException reason:reason userInfo:nil];
     [exception raise];
 }
