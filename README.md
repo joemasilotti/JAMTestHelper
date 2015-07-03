@@ -2,6 +2,21 @@
 
 A few additions to XCTest geared towards UI Testing in Xcode 7 and iOS 9.
 
+```
+- (void)testLikeButton {
+    XCUIElement *button = self.app.buttons[@"Like"];
+
+    [button tap];
+    [self waitForActivityIndicatorToFinish];
+
+    XCUIElement *label = self.app.staticTexts[@"1 like"];
+    [self waitForElementToExist:label];
+
+    [button tap];
+    [self waitForElementToNotExist:label];
+}
+```
+
 ## Helpers
 
 - `waitForElementToExist:` - waits until `element.exists` returns `YES`
