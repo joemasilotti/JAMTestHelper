@@ -9,8 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <XCTest/XCTest.h>
 
-@interface JAMTestHelperTests : XCTestCase
+#import "XCTestCase+JAMTestHelpers.h"
 
+@interface JAMTestHelperTests : XCTestCase
+@property (nonatomic) XCUIApplication *app;
 @end
 
 @implementation JAMTestHelperTests
@@ -19,11 +21,21 @@
     [super setUp];
     
     self.continueAfterFailure = NO;
-    [[[XCUIApplication alloc] init] launch];
+    self.app = [[XCUIApplication alloc] init];
+    [self.app launch];
 }
 
-- (void)testExample {
-    XCTAssertTrue(YES);
+- (void)testWaitForElementToExist {
+    XCUIElement *helloLabel = self.app.staticTexts[@"Hello, world!"];
+    XCTAssertFalse(helloLabel.exists);
+
+    [self waitForElementToExist:helloLabel];
+    XCTAssert(helloLabel.exists);
+}
+
+- (void)testWaitForElementToExistTimeOut {
+    XCUIElement *nonexistentLabel = self.app.staticTexts[@"Nonexistent label."];
+    XCTAssertThrowsSpecificNamed([self waitForElementToExist:nonexistentLabel], NSException, JAMTimeoutException);
 }
 
 @end
