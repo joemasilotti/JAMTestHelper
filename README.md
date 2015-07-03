@@ -10,7 +10,7 @@ A few additions to XCTest geared towards UI Testing in Xcode 7 and iOS 9.
 
 Both of these helpers work by ticking the run loop a tenth of a second in between checks. If the element does not meet the condition after two seconds an exception is raised.
 
-Exceptions are used over `XCTFail()` so the tests' tests, [`JAMTestHelperTests.m`](UI Tests/JAMTestHelperTests.m), can run valid assertions. See that file for more details.
+Exceptions are used over `XCTFail()` so the tests' tests, `JAMTestHelperTests.m` can run valid assertions. See that file for more details.
 
 ## Installation
 

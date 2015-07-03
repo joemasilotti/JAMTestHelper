@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "JAMTestHelper"
   s.version      = "0.0.1"
-  s.summary      = "A few additions to XCTest geared to UI Testing in Xcode 7 and iOS 9."
+  s.summary      = "A few additions to XCTest geared towards UI Testing in Xcode 7 and iOS 9."
   s.description  = <<-DESC
                   UI Testing in Xcode 7 doesn't offer any way to wait for elements to exist.
 
