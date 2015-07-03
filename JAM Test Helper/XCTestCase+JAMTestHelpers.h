@@ -13,5 +13,6 @@ FOUNDATION_EXPORT NSString * const JAMTimeoutException;
 @interface XCTestCase (JAMTestHelpers)
 
 - (void)waitForElementToExist:(XCUIElement *)element;
+- (void)waitForElementToNotExist:(XCUIElement *)element;
 
 @end

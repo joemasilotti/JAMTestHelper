@@ -18,7 +18,18 @@ const CGFloat kTimeout = 2.0f;
     NSTimeInterval startTime = [NSDate timeIntervalSinceReferenceDate];
     while (!element.exists) {
         if ([NSDate timeIntervalSinceReferenceDate] - startTime > kTimeout) {
-            [self raiseTimeoutExceptionForElement:element];
+            [self raiseTimeoutExceptionForElementNotExisting:element];
+        }
+
+        CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0.1, false);
+    }
+}
+
+- (void)waitForElementToNotExist:(XCUIElement *)element {
+    NSTimeInterval startTime = [NSDate timeIntervalSinceReferenceDate];
+    while (element.exists) {
+        if ([NSDate timeIntervalSinceReferenceDate] - startTime > kTimeout) {
+            [self raiseTimeoutExceptionForElementNotExisting:element];
         }
 
         CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0.1, false);
@@ -27,7 +38,13 @@ const CGFloat kTimeout = 2.0f;
 
 #pragma mark - Private
 
-- (void)raiseTimeoutExceptionForElement:(XCUIElement *)element {
+- (void)raiseTimeoutExceptionForElementExisting:(XCUIElement *)element {
+    NSString *reason = [NSString stringWithFormat:@"Timed out waiting for element (%@) to not exist.", element];
+    NSException *exception = [NSException exceptionWithName:JAMTimeoutException reason:reason userInfo:nil];
+    [exception raise];
+}
+
+- (void)raiseTimeoutExceptionForElementNotExisting:(XCUIElement *)element {
     NSString *reason = [NSString stringWithFormat:@"Timed out waiting for element (%@) to exist.", element];
     NSException *exception = [NSException exceptionWithName:JAMTimeoutException reason:reason userInfo:nil];
     [exception raise];

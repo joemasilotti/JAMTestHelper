@@ -38,4 +38,17 @@
     XCTAssertThrowsSpecificNamed([self waitForElementToExist:nonexistentLabel], NSException, JAMTimeoutException);
 }
 
+- (void)testWaitForElementToNotExist {
+    XCUIElement *waitingLabel = self.app.staticTexts[@"Waiting..."];
+    XCTAssert(waitingLabel.exists);
+
+    [self waitForElementToNotExist:waitingLabel];
+    XCTAssertFalse(waitingLabel.exists);
+}
+
+- (void)testWaitForElementToNotExistTimeOut {
+    XCUIElement *permanentLabel = self.app.staticTexts[@"Permanent label."];
+    XCTAssertThrowsSpecificNamed([self waitForElementToNotExist:permanentLabel], NSException, JAMTimeoutException);
+}
+
 @end
