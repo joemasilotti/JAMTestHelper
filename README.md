@@ -2,7 +2,7 @@
 
 A few additions to XCTest geared towards UI Testing in Xcode 7 and iOS 9.
 
-```
+```objc
 - (void)testLikeButton {
     XCUIElement *button = self.app.buttons[@"Like"];
 
@@ -35,7 +35,7 @@ Exceptions are used over `XCTFail()` so the tests' tests, `JAMTestHelperTests.m`
 1. `pod init`
 1. In your Podfile, add `JAMTestHelper` to your UI Testing target
 
-```
+```ruby
 target 'UI Tests' do
   pod 'JAMTestHelper'
 end
