@@ -12,7 +12,21 @@ Both of these helpers work by ticking the run loop a tenth of a second in betwee
 
 Exceptions are used over `XCTFail()` so the tests' tests, [`JAMTestHelperTests.m`](UI Tests/JAMTestHelperTests.m), can run valid assertions. See that file for more details.
 
-## Usage
+## Installation
+
+### Cocoapods (recommended)
+
+1. Install [CocoaPods](http://cocoapods.org/) with `gem install cocoapods`.
+1. `pod init`
+1. In your Podfile, add `JAMTestHelper` to your UI Testing target
+
+```
+target 'UI Tests' do
+  pod 'JAMTestHelper'
+end
+```
+
+### Manual
 
 Clone this repo and drag and drop `XCTestCase+JAMTestHelper.h` and `XCTestCase+JAMTestHelper.m` into your UI Testing target. Import the header and call the methods on `self` inside of an `XCTestCase`.
 
