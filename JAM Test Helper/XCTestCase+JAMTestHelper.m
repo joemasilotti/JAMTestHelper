@@ -22,6 +22,19 @@ const CGFloat kTimeout = 2.0f;
     [self waitForElement:element toExist:NO];
 }
 
+- (void)waitForActivityIndicatorToFinish {
+    NSTimeInterval startTime = [NSDate timeIntervalSinceReferenceDate];
+
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+    XCUIElementQuery *spinnerQuery = app.activityIndicators;
+    while ([spinnerQuery.element.value integerValue] == 1) {
+        if ([NSDate timeIntervalSinceReferenceDate] - startTime > kTimeout) {
+            [self raiseTimeoutExceptionForActivityIndicator];
+        }
+        CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0.1, false);
+    }
+}
+
 #pragma mark - Private
 
 - (void)waitForElement:(XCUIElement *)element toExist:(BOOL)shouldExist {
@@ -43,11 +56,18 @@ const CGFloat kTimeout = 2.0f;
     [self raiseTimeoutExceptionForElement:element existing:NO];
 }
 
+- (void)raiseTimeoutExceptionForActivityIndicator {
+    [self raiseTimeoutExceptionWithReason:@"TImed out waiting for activity indicator to finish."];
+}
+
 - (void)raiseTimeoutExceptionForElement:(XCUIElement *)element existing:(BOOL)existing {
     NSString *reason = [NSString stringWithFormat:@"Timed out waiting for element (%@) to%@ exist.",
                         element, existing ? @" not" : @""];
-    NSException *exception = [NSException exceptionWithName:JAMTimeoutException reason:reason userInfo:nil];
-    [exception raise];
+    [self raiseTimeoutExceptionWithReason:reason];
+}
+
+- (void)raiseTimeoutExceptionWithReason:(NSString *)reason {
+    [[NSException exceptionWithName:JAMTimeoutException reason:reason userInfo:nil] raise];
 }
 
 @end

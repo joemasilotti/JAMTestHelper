@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.20" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.16"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -28,16 +29,44 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhl-CV-OHA">
+                                <rect key="frame" x="277" y="527" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Ebm-oC-3O0">
+                                <rect key="frame" x="250" y="492" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.050000000000000003" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="G34-TC-xr7"/>
+                                    <constraint firstAttribute="width" secondItem="Ebm-oC-3O0" secondAttribute="height" multiplier="1:1" id="Tud-Fh-Nh9"/>
+                                </constraints>
+                                <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EDW-xF-PxB">
+                                <rect key="frame" x="256" y="454" width="89" height="30"/>
+                                <state key="normal" title="Stop Spinner"/>
+                                <connections>
+                                    <action selector="stopSpinner" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lts-lv-qzs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="SvY-dF-Oax" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="60K-Zq-VBn"/>
+                            <constraint firstItem="rhl-CV-OHA" firstAttribute="centerY" secondItem="Ebm-oC-3O0" secondAttribute="centerY" id="8rX-eV-Igd"/>
                             <constraint firstItem="IMi-b1-2QS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KBl-Du-9Sg"/>
                             <constraint firstItem="SvY-dF-Oax" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NkM-Hc-iuZ"/>
+                            <constraint firstItem="Ebm-oC-3O0" firstAttribute="top" secondItem="EDW-xF-PxB" secondAttribute="bottom" constant="8" id="Vzi-1t-B1b"/>
+                            <constraint firstItem="rhl-CV-OHA" firstAttribute="centerX" secondItem="Ebm-oC-3O0" secondAttribute="centerX" id="WiD-NF-BDm"/>
+                            <constraint firstItem="Ebm-oC-3O0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xf1-2b-tDJ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ebm-oC-3O0" secondAttribute="bottom" constant="8" id="YFB-0m-nwB"/>
                             <constraint firstItem="IMi-b1-2QS" firstAttribute="top" secondItem="SvY-dF-Oax" secondAttribute="bottom" constant="8" id="h2H-DY-jto"/>
+                            <constraint firstItem="Ebm-oC-3O0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="r6l-ON-ziU"/>
+                            <constraint firstItem="EDW-xF-PxB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tgX-ub-lAc"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="Ebm-oC-3O0" id="7Y4-Sx-Tsd"/>
                         <outlet property="helloLabel" destination="SvY-dF-Oax" id="Umd-E2-8Ke"/>
                     </connections>
                 </viewController>

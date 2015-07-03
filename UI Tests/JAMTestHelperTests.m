@@ -51,4 +51,24 @@
     XCTAssertThrowsSpecificNamed([self waitForElementToNotExist:permanentLabel], NSException, JAMTimeoutException);
 }
 
+- (void)testWaitForActivityIndicatorToFinish {
+    XCUIElement *stopSpinnerButton = self.app.buttons[@"Stop Spinner"];
+    [stopSpinnerButton tap];
+
+    XCUIElement *activityIndicator = self.app.activityIndicators.element;
+    XCTAssert(activityIndicator.exists);
+
+    [self waitForActivityIndicatorToFinish];
+
+    XCUIElement *buttonUnderSpinner = self.app.buttons[@"Button"];
+    [buttonUnderSpinner tap];
+}
+
+- (void)testWaitForActivityIndicatorToFinishTimeOut {
+    XCUIElement *activityIndicator = self.app.activityIndicators.element;
+    XCTAssert(activityIndicator.exists);
+
+    XCTAssertThrowsSpecificNamed([self waitForActivityIndicatorToFinish], NSException, JAMTimeoutException);
+}
+
 @end

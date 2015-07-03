@@ -10,7 +10,10 @@
 
 @interface ViewController ()
 @property (nonatomic) IBOutlet UILabel *helloLabel;
+@property (nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @end
+
+const CGFloat kDelay = 1.0f;
 
 @implementation ViewController
 
@@ -19,7 +22,13 @@
 
     [self.helloLabel performSelector:@selector(setText:)
                           withObject:@"Hello, world!"
-                          afterDelay:1.0f];
+                          afterDelay:kDelay];
+}
+
+- (IBAction)stopSpinner {
+    [self.activityIndicator performSelector:@selector(stopAnimating)
+                                 withObject:nil
+                                 afterDelay:kDelay];
 }
 
 @end

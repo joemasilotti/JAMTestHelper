@@ -14,5 +14,6 @@ FOUNDATION_EXPORT NSString * const JAMTimeoutException;
 
 - (void)waitForElementToExist:(XCUIElement *)element;
 - (void)waitForElementToNotExist:(XCUIElement *)element;
+- (void)waitForActivityIndicatorToFinish;
 
 @end

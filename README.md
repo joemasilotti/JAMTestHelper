@@ -6,6 +6,7 @@ A few additions to XCTest geared towards UI Testing in Xcode 7 and iOS 9.
 
 - `waitForElementToExist:` - waits until `element.exists` returns `YES`
 - `waitForElementToNotExist:` - waits until `element.exists` returns `NO`
+- `waitForActivityIndicatorToFinish` - waits until the (assumed) only activity indicator stops animating
 
 Both of these helpers work by ticking the run loop a tenth of a second in between checks. If the element does not meet the condition after two seconds an exception is raised.
 
