@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <XCTest/XCTest.h>
 
-#import "XCTestCase+JAMTestHelpers.h"
+#import "XCTestCase+JAMTestHelper.h"
 
 @interface JAMTestHelperTests : XCTestCase
 @property (nonatomic) XCUIApplication *app;

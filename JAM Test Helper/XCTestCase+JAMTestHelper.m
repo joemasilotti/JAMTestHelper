@@ -1,18 +1,18 @@
 //
-//  XCTestCase+JAMTestHelpers.m
+//  XCTestCase+JAMTestHelper.m
 //  JAMTestHelper
 //
 //  Created by Joe Masilotti on 7/2/15.
 //  Copyright © 2015 Masilotti.com. All rights reserved.
 //
 
-#import "XCTestCase+JAMTestHelpers.h"
+#import "XCTestCase+JAMTestHelper.h"
 
 NSString * const JAMTimeoutException = @"JAMTestHelper Timeout Failure";
 
 const CGFloat kTimeout = 2.0f;
 
-@implementation XCTestCase (JAMTestHelpers)
+@implementation XCTestCase (JAMTestHelper)
 
 - (void)waitForElementToExist:(XCUIElement *)element {
     [self waitForElement:element toExist:YES];

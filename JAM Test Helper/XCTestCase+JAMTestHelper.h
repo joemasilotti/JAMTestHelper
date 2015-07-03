@@ -1,5 +1,5 @@
 //
-//  XCTestCase+JAMTestHelpers.h
+//  XCTestCase+JAMTestHelper.h
 //  JAMTestHelper
 //
 //  Created by Joe Masilotti on 7/2/15.
@@ -10,7 +10,7 @@
 
 FOUNDATION_EXPORT NSString * const JAMTimeoutException;
 
-@interface XCTestCase (JAMTestHelpers)
+@interface XCTestCase (JAMTestHelper)
 
 - (void)waitForElementToExist:(XCUIElement *)element;
 - (void)waitForElementToNotExist:(XCUIElement *)element;
