@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		844CF58D1B4B438E002A125B /* JAMTestHelperTestsSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844CF58C1B4B438E002A125B /* JAMTestHelperTestsSwift.swift */; };
+		844CF5BD1B4B5647002A125B /* JAMTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844CF58F1B4B4856002A125B /* JAMTestHelper.swift */; };
 		847C37CE1B46227300B9FB1D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 847C37CD1B46227300B9FB1D /* main.m */; };
 		847C37D11B46227300B9FB1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 847C37D01B46227300B9FB1D /* AppDelegate.m */; };
 		847C37D41B46227300B9FB1D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847C37D31B46227300B9FB1D /* ViewController.m */; };
 		847C37D71B46227300B9FB1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847C37D51B46227300B9FB1D /* Main.storyboard */; };
 		847C37D91B46227300B9FB1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 847C37D81B46227300B9FB1D /* Assets.xcassets */; };
 		847C37DC1B46227300B9FB1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847C37DA1B46227300B9FB1D /* LaunchScreen.storyboard */; };
-		847C37E71B46227300B9FB1D /* JAMTestHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 847C37E61B46227300B9FB1D /* JAMTestHelperTests.m */; };
 		847C37FE1B46268400B9FB1D /* XCTestCase+JAMTestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 847C37FD1B46268400B9FB1D /* XCTestCase+JAMTestHelper.m */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		844CF58C1B4B438E002A125B /* JAMTestHelperTestsSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JAMTestHelperTestsSwift.swift; sourceTree = "<group>"; };
+		844CF58F1B4B4856002A125B /* JAMTestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JAMTestHelper.swift; sourceTree = "<group>"; };
 		847C37C91B46227300B9FB1D /* JAMTestHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JAMTestHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		847C37CD1B46227300B9FB1D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		847C37CF1B46227300B9FB1D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -39,10 +42,10 @@
 		847C37DB1B46227300B9FB1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		847C37DD1B46227300B9FB1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		847C37E21B46227300B9FB1D /* JAMTestHelperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JAMTestHelperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		847C37E61B46227300B9FB1D /* JAMTestHelperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JAMTestHelperTests.m; sourceTree = "<group>"; };
 		847C37E81B46227300B9FB1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		847C37FC1B46268400B9FB1D /* XCTestCase+JAMTestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XCTestCase+JAMTestHelper.h"; sourceTree = "<group>"; };
 		847C37FD1B46268400B9FB1D /* XCTestCase+JAMTestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XCTestCase+JAMTestHelper.m"; sourceTree = "<group>"; };
+		84C01C741B4B6D8D000E3AFC /* JAMTestHelperUITests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JAMTestHelperUITests-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				847C37F41B46244200B9FB1D /* Supporting Files */,
-				847C37E61B46227300B9FB1D /* JAMTestHelperTests.m */,
+				844CF58C1B4B438E002A125B /* JAMTestHelperTestsSwift.swift */,
+				84C01C741B4B6D8D000E3AFC /* JAMTestHelperUITests-Bridging-Header.h */,
 			);
 			path = "UI Tests";
 			sourceTree = "<group>";
@@ -142,6 +146,7 @@
 		847C37FB1B46268400B9FB1D /* JAM Test Helper */ = {
 			isa = PBXGroup;
 			children = (
+				844CF58F1B4B4856002A125B /* JAMTestHelper.swift */,
 				847C37FC1B46268400B9FB1D /* XCTestCase+JAMTestHelper.h */,
 				847C37FD1B46268400B9FB1D /* XCTestCase+JAMTestHelper.m */,
 			);
@@ -192,6 +197,7 @@
 		847C37C11B46227300B9FB1D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Masilotti.com;
 				TargetAttributes = {
@@ -258,7 +264,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				847C37E71B46227300B9FB1D /* JAMTestHelperTests.m in Sources */,
+				844CF58D1B4B438E002A125B /* JAMTestHelperTestsSwift.swift in Sources */,
+				844CF5BD1B4B5647002A125B /* JAMTestHelper.swift in Sources */,
 				847C37FE1B46268400B9FB1D /* XCTestCase+JAMTestHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,10 +384,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Test App/Supporting FIles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.masilotti.JAMTestHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "JAM Test Helper/JAMTestHelper-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -388,20 +398,25 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Test App/Supporting FIles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.masilotti.JAMTestHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "JAM Test Helper/JAMTestHelper-Bridging-Header.h";
 			};
 			name = Release;
 		};
 		847C37EF1B46227300B9FB1D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "UI Tests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.masilotti.JAMTestHelperUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "UI Tests/JAMTestHelperUITests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_TARGET_NAME = JAMTestHelper;
 				USES_XCTRUNNER = YES;
 			};
@@ -410,10 +425,12 @@
 		847C37F01B46227300B9FB1D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "UI Tests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.masilotti.JAMTestHelperUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "UI Tests/JAMTestHelperUITests-Bridging-Header.h";
 				TEST_TARGET_NAME = JAMTestHelper;
 				USES_XCTRUNNER = YES;
 			};
