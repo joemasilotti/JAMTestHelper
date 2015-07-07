@@ -15,7 +15,6 @@
 		847C37D71B46227300B9FB1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847C37D51B46227300B9FB1D /* Main.storyboard */; };
 		847C37D91B46227300B9FB1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 847C37D81B46227300B9FB1D /* Assets.xcassets */; };
 		847C37DC1B46227300B9FB1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847C37DA1B46227300B9FB1D /* LaunchScreen.storyboard */; };
-		847C37E71B46227300B9FB1D /* JAMTestHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 847C37E61B46227300B9FB1D /* JAMTestHelperTests.m */; };
 		847C37FE1B46268400B9FB1D /* XCTestCase+JAMTestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 847C37FD1B46268400B9FB1D /* XCTestCase+JAMTestHelper.m */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +42,6 @@
 		847C37DB1B46227300B9FB1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		847C37DD1B46227300B9FB1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		847C37E21B46227300B9FB1D /* JAMTestHelperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JAMTestHelperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		847C37E61B46227300B9FB1D /* JAMTestHelperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JAMTestHelperTests.m; sourceTree = "<group>"; };
 		847C37E81B46227300B9FB1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		847C37FC1B46268400B9FB1D /* XCTestCase+JAMTestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XCTestCase+JAMTestHelper.h"; sourceTree = "<group>"; };
 		847C37FD1B46268400B9FB1D /* XCTestCase+JAMTestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XCTestCase+JAMTestHelper.m"; sourceTree = "<group>"; };
@@ -113,7 +111,6 @@
 			isa = PBXGroup;
 			children = (
 				847C37F41B46244200B9FB1D /* Supporting Files */,
-				847C37E61B46227300B9FB1D /* JAMTestHelperTests.m */,
 				844CF58C1B4B438E002A125B /* JAMTestHelperTestsSwift.swift */,
 				84C01C741B4B6D8D000E3AFC /* JAMTestHelperUITests-Bridging-Header.h */,
 			);
@@ -267,7 +264,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				847C37E71B46227300B9FB1D /* JAMTestHelperTests.m in Sources */,
 				844CF58D1B4B438E002A125B /* JAMTestHelperTestsSwift.swift in Sources */,
 				844CF5BD1B4B5647002A125B /* JAMTestHelper.swift in Sources */,
 				847C37FE1B46268400B9FB1D /* XCTestCase+JAMTestHelper.m in Sources */,

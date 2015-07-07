@@ -27,7 +27,10 @@ class JAMTestHelperTestsSwift: XCTestCase {
         XCTAssert(helloLabel.exists)
     }
 
-    func PENDING_testWaitForElementToExistTimeOut() { }
+    func testWaitForElementToExistTimeOut() {
+        let nonexistentLabel = app.staticTexts["Nonexistent label."]
+        XCTAssertThrows({ self.waitForElementToExist(nonexistentLabel) })
+    }
 
     func testWaitForElementToNotExist() {
         let waitingLabel = app.staticTexts["Waiting..."]
@@ -37,7 +40,10 @@ class JAMTestHelperTestsSwift: XCTestCase {
         XCTAssertFalse(waitingLabel.exists)
     }
 
-    func PENDING_testWaitForElementToNotExistTimeOut() { }
+    func testWaitForElementToNotExistTimeOut() {
+        let permanentLabel = app.staticTexts["Permanent label."]
+        XCTAssertThrows({ self.waitForElementToNotExist(permanentLabel) })
+    }
 
     func testWaitForActivityIndicatorToFinish() {
         let stopSpinnerButton = app.buttons["Stop Spinner"]
@@ -52,5 +58,10 @@ class JAMTestHelperTestsSwift: XCTestCase {
         buttonUnderSpinner.tap()
     }
 
-    func PENDING_testWaitForActivityIndicatorToFinishTimeOut() { }
+    func testWaitForActivityIndicatorToFinishTimeOut() {
+        let activityIndicator = app.activityIndicators.element
+        XCTAssert(activityIndicator.exists);
+
+        XCTAssertThrows({ self.waitForActivityIndicatorToFinish() })
+    }
 }
