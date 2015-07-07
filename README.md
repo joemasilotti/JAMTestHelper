@@ -2,30 +2,30 @@
 
 A few additions to XCTest geared towards UI Testing in Xcode 7 and iOS 9.
 
-```objc
+```swift
 - (void)testLikeButton {
-    XCUIElement *button = self.app.buttons[@"Like"];
+    let button = app.buttons["Like"]
 
-    [button tap];
-    [self waitForActivityIndicatorToFinish];
+    button.tap()
+    waitForActivityIndicatorToFinish()
 
-    XCUIElement *label = self.app.staticTexts[@"1 like"];
-    [self waitForElementToExist:label];
+    let label = app.staticTexts["1 like"]
+    waitForElementToExist(label)
 
-    [button tap];
-    [self waitForElementToNotExist:label];
+    button.tap()
+    waitForElementToNotExist(label)
 }
 ```
 
 ## Helpers
 
-- `waitForElementToExist:` - waits until `element.exists` returns `YES`
-- `waitForElementToNotExist:` - waits until `element.exists` returns `NO`
-- `waitForActivityIndicatorToFinish` - waits until the (assumed) only activity indicator stops animating
+- `waitForElementToExist()` - waits until `element.exists` is true
+- `waitForElementToNotExist()` - waits until `element.exists` is false
+- `waitForActivityIndicatorToFinish()` - waits until the (assumed) only activity indicator stops animating
 
 Both of these helpers work by ticking the run loop a tenth of a second in between checks. If the element does not meet the condition after two seconds an exception is raised.
 
-Exceptions are used over `XCTFail()` so the tests' tests, `JAMTestHelperTests.m` can run valid assertions. See that file for more details.
+Exceptions are used over `XCTFail()` so the tests' tests, `JAMTestHelperTests.swift` can run valid assertions. See that file for more details.
 
 ## Installation
 
@@ -43,7 +43,7 @@ end
 
 ### Manual
 
-Clone this repo and drag and drop `XCTestCase+JAMTestHelper.h` and `XCTestCase+JAMTestHelper.m` into your UI Testing target. Import the header and call the methods on `self` inside of an `XCTestCase`.
+Clone this repo and drag and drop `JAMTestHelper.swift` into your UI Testing target. You can then reference the methods inside of an `XCTestCase` as shown in the example.
 
 ## Notes
 
