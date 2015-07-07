@@ -10,38 +10,38 @@ import Foundation
 import XCTest
 
 /**
-    Adds a few methods to XCTest geared towards UI Testing in Xcode 7 and iOS 9.
-
-    Import this extension into your UI Testing tests to wait for elements and
-    activity items to appear or dissappear.
-
-    @note The default timeout is two seconds.
+* Adds a few methods to XCTest geared towards UI Testing in Xcode 7 and iOS 9.
+*
+* Import this extension into your UI Testing tests to wait for elements and
+* activity items to appear or dissappear.
+*
+* @note The default timeout is two seconds.
 */
 extension XCTestCase {
     /**
-        Waits for the default timeout until `element.exists` is true.
-
-        :param: element the element you are waiting for
-        :see: waitForElementToNotExist()
-     */
+    * Waits for the default timeout until `element.exists` is true.
+    *
+    * @param element the element you are waiting for
+    * @see waitForElementToNotExist()
+    */
     func waitForElementToExist(element: XCUIElement) {
         waitForElement(element, toExist: true)
     }
 
     /**
-        Waits for the default timeout until `element.exists` is false.
-
-        :param: element the element you are waiting for
-        :see: waitForElementToExist()
+    * Waits for the default timeout until `element.exists` is false.
+    *
+    * @param element the element you are waiting for
+    * @see waitForElementToExist()
     */
     func waitForElementToNotExist(element: XCUIElement) {
         waitForElement(element, toExist: false)
     }
 
     /**
-        Waits for the default timeout until the activity indicator stop spinning.
-
-       :note: Should only be used if one `ActivityIndicator` is present.
+    * Waits for the default timeout until the activity indicator stop spinning.
+    *
+    * @note Should only be used if one `ActivityIndicator` is present.
     */
     func waitForActivityIndicatorToFinish() {
         let spinnerQuery = XCUIApplication().activityIndicators
