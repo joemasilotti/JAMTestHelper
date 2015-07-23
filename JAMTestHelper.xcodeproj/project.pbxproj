@@ -7,11 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84052EAF1B60F77800A4A9F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84052EAE1B60F77800A4A9F0 /* AppDelegate.swift */; };
+		84052ECF1B60F9BB00A4A9F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84052ECE1B60F9BB00A4A9F0 /* ViewController.swift */; };
 		844CF58D1B4B438E002A125B /* JAMTestHelperTestsSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844CF58C1B4B438E002A125B /* JAMTestHelperTestsSwift.swift */; };
 		844CF5BD1B4B5647002A125B /* JAMTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844CF58F1B4B4856002A125B /* JAMTestHelper.swift */; };
-		847C37CE1B46227300B9FB1D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 847C37CD1B46227300B9FB1D /* main.m */; };
-		847C37D11B46227300B9FB1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 847C37D01B46227300B9FB1D /* AppDelegate.m */; };
-		847C37D41B46227300B9FB1D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847C37D31B46227300B9FB1D /* ViewController.m */; };
 		847C37D71B46227300B9FB1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847C37D51B46227300B9FB1D /* Main.storyboard */; };
 		847C37D91B46227300B9FB1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 847C37D81B46227300B9FB1D /* Assets.xcassets */; };
 		847C37DC1B46227300B9FB1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847C37DA1B46227300B9FB1D /* LaunchScreen.storyboard */; };
@@ -29,18 +28,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		84052EAE1B60F77800A4A9F0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84052ECE1B60F9BB00A4A9F0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		844CF58C1B4B438E002A125B /* JAMTestHelperTestsSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JAMTestHelperTestsSwift.swift; sourceTree = "<group>"; };
 		844CF58F1B4B4856002A125B /* JAMTestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JAMTestHelper.swift; sourceTree = "<group>"; };
 		847C37C91B46227300B9FB1D /* JAMTestHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JAMTestHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		847C37CD1B46227300B9FB1D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		847C37CF1B46227300B9FB1D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		847C37D01B46227300B9FB1D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		847C37D21B46227300B9FB1D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		847C37D31B46227300B9FB1D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		847C37D61B46227300B9FB1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		847C37D81B46227300B9FB1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		847C37DB1B46227300B9FB1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		847C37DD1B46227300B9FB1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		847C37DD1B46227300B9FB1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		847C37E21B46227300B9FB1D /* JAMTestHelperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JAMTestHelperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		847C37E81B46227300B9FB1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		847C37FC1B46268400B9FB1D /* XCTestCase+JAMTestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XCTestCase+JAMTestHelper.h"; sourceTree = "<group>"; };
@@ -91,8 +87,7 @@
 				847C37F31B4623C200B9FB1D /* Controllers */,
 				847C37CC1B46227300B9FB1D /* Supporting Files */,
 				847C37F21B46233900B9FB1D /* Views */,
-				847C37CF1B46227300B9FB1D /* AppDelegate.h */,
-				847C37D01B46227300B9FB1D /* AppDelegate.m */,
+				84052EAE1B60F77800A4A9F0 /* AppDelegate.swift */,
 				847C37D81B46227300B9FB1D /* Assets.xcassets */,
 			);
 			path = "Test App";
@@ -102,7 +97,6 @@
 			isa = PBXGroup;
 			children = (
 				847C37DD1B46227300B9FB1D /* Info.plist */,
-				847C37CD1B46227300B9FB1D /* main.m */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -129,8 +123,7 @@
 		847C37F31B4623C200B9FB1D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				847C37D21B46227300B9FB1D /* ViewController.h */,
-				847C37D31B46227300B9FB1D /* ViewController.m */,
+				84052ECE1B60F9BB00A4A9F0 /* ViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -254,9 +247,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				847C37D41B46227300B9FB1D /* ViewController.m in Sources */,
-				847C37D11B46227300B9FB1D /* AppDelegate.m in Sources */,
-				847C37CE1B46227300B9FB1D /* main.m in Sources */,
+				84052ECF1B60F9BB00A4A9F0 /* ViewController.swift in Sources */,
+				84052EAF1B60F77800A4A9F0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,7 +381,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.masilotti.JAMTestHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "JAM Test Helper/JAMTestHelper-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -403,7 +394,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.masilotti.JAMTestHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "JAM Test Helper/JAMTestHelper-Bridging-Header.h";
 			};
 			name = Release;
 		};
