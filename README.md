@@ -1,5 +1,7 @@
 # JAMTestHelper
 
+> Requires Xcode 7 Beta 4
+
 A few additions to XCTest geared towards UI Testing in Xcode 7 and iOS 9.
 
 ```swift
