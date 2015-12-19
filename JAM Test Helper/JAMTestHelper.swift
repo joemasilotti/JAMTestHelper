@@ -68,7 +68,7 @@ extension XCTestCase {
             if (NSDate.timeIntervalSinceReferenceDate() - startTime > 2.0) {
                 raiseTimeOutException(failureMessage)
             }
-            CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0.1, Boolean(0))
+            CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0.1, Bool(0))
         }
     }
 
