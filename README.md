@@ -31,7 +31,7 @@ Exceptions are used over `XCTFail()` so the tests' tests, `JAMTestHelperTests.sw
 
 ## Installation
 
-### Cocoapods (recommended)
+### CocoaPods (recommended)
 
 1. Install [CocoaPods](http://cocoapods.org/) with `gem install cocoapods`.
 1. `pod init`
