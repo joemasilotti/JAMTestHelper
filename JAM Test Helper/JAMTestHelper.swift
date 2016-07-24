@@ -17,7 +17,7 @@ import XCTest
 *
 * @note The default timeout is two seconds.
 */
-extension XCTestCase {
+public extension XCTestCase {
     /**
     * Waits for the default timeout until `element.exists` is true.
     *
