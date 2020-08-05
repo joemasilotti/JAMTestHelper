@@ -1,3 +1,5 @@
+> This project has been archived and is now read-only. The added features are now built in to Xcode.
+
 # JAMTestHelper
 
 > Requires Xcode 7.2
